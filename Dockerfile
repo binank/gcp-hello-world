@@ -5,5 +5,4 @@ FROM tomcat:latest
 COPY webapp/target/webapp.war /usr/local/tomcat/webapps/ 
 
 
-# Start Tomcat when the container starts
-CMD ["catalina.sh", "run"]
+
