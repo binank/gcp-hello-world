@@ -2,7 +2,7 @@
 FROM tomcat:latest
 
 # Copy the web application WAR file into the Tomcat webapps directory
-COPY target/vm.war /usr/local/tomcat/webapps/
+COPY /home/moorthy14g/target/vm.war /usr/local/tomcat/webapps/
 
 
 # Start Tomcat when the container starts
