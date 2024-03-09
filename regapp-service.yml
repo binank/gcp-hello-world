@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: valaxy-service
+  name: vm-service
   labels:
-    app: regapp 
+    app: vmapp 
 spec:
   selector:
-    app: regapp 
+    app: vmapp 
 
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 8080
 
   type: LoadBalancer
