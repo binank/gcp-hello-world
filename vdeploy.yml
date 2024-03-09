@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vmapp
-        image: us-east1-docker.pkg.dev/xenon-chain-407805/vm/appweb:V3
+        image: us-east1-docker.pkg.dev/xenon-chain-407805/vm/appweb:V3.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
