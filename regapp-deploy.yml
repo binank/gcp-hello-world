@@ -1,24 +1,24 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: valaxy-regapp
+  name: vmapp
   labels: 
-     app: regapp
+     app: vmapp
 
 spec:
   replicas: 2 
   selector:
     matchLabels:
-      app: regapp
+      app: vmapp
 
   template:
     metadata:
       labels:
-        app: regapp
+        app: vmapp
     spec:
       containers:
-      - name: regapp
-        image: valaxy/regapp
+      - name: vmapp
+        image: us-east1-docker.pkg.dev/xenon-chain-407805/vm/appweb:V1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
