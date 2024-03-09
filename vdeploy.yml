@@ -3,14 +3,12 @@ kind: Deployment
 metadata:
   name: vmapp
   labels: 
-     app: vmapp
-
+    app: vmapp
 spec:
   replicas: 2 
   selector:
     matchLabels:
       app: vmapp
-
   template:
     metadata:
       labels:
@@ -18,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vmapp
-        image: us-east1-docker.pkg.dev/xenon-chain-407805/vm/appweb:V3.0
+        image: us-east1-docker.pkg.dev/xenon-chain-407805/vm/appweb:${TAG}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -27,3 +25,18 @@ spec:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vm-service
+  labels:
+    app: vmapp 
+spec:
+  selector:
+    app: vmapp 
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
