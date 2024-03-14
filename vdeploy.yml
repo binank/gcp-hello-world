@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vmapp
-        image: us-east1-docker.pkg.dev/quick-bonfire-416805/jenkins-gcp-rep/appweb:1
+        image: us-east1-docker.pkg.dev/quick-bonfire-416805/jenkins-gcp-rep/appweb:3
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
